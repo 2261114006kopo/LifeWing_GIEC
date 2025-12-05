@@ -130,12 +130,19 @@ To get a local copy up and running follow these simple example steps.
 ### Requirements
 
 This is an example of how to list things you need to use the software and how to install them.
+
 python	      3.8.10
+
 OpenCV
+
 tensorflow	  2.10.0
+
 torch	        2.2.2
+
 torchvision	  0.17.2
+
 torchaudio	  2.2.2
+
 ultralytics
 
 ### Activation
