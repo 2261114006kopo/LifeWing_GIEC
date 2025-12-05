@@ -1,0 +1,71 @@
+<class 'ultralytics.engine.results.Results'>
+1
+ultralytics.engine.results.Results object with attributes:
+
+boxes: ultralytics.engine.results.Boxes object
+keypoints: None
+masks: ultralytics.engine.results.Masks object
+names: {0: '0'}
+obb: None
+orig_img: array([[[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]],
+
+       [[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]],
+
+       [[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]],
+
+       ...,
+
+       [[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]],
+
+       [[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]],
+
+       [[0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+        ...,
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]]], shape=(360, 640, 3), dtype=uint8)
+orig_shape: (360, 640)
+path: 'C:\\Users\\402\\Desktop\\LifeWing_AI\\Gemini\\helmet\\20251022_122308_640_360_segment_000000000_to_000100000.mp4'
+probs: None
+save_dir: 'C:\\Users\\402\\Desktop\\LifeWing_AI\\Gemini\\runs\\segment\\predict6'      
+speed: {'preprocess': 34.37280000071041, 'inference': 382.5283999904059, 'postprocess': 14.3093999940902}
+[297.0, 128.0, 342.0, 180.0]
+Center of bbox: 319.5 , 154.0
+Width of bbox: 45.0
+Height of bbox: 52.0
+Relative center of bbox: 0.49921875 , 0.42777777777777776
+Relative width of bbox: 0.0703125
+Relative height of bbox: 0.14444444444444443
+xywh format of bbox: 0.49921875 0.42777777777777776 0.0703125 0.14444444444444443 

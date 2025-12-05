@@ -1,0 +1,126 @@
+python	3.8.10
+tensorflow	2.10.0
+torch	2.2.2
+torchvision	0.17.2
+torchaudio	2.2.2
+
+@
+python -m venv lifenv
+./lifenv/script/activate.ps1
+
+pip install tensorflow==2.10.0
+pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2
+pip install ultralytics --no-deps
+pip install numpy matplotlib polars pyyaml pillow psutil requests scipy ultralytics-thop
+pip install opencv-python
+
+pip freeze > requirements.txt
+
+@CLI Ultralytics
+Syntax: 
+yolo TASK MODE ARGS
+Train:
+yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+Predict:
+yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+Val:
+yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+Export:
+yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+Count:
+yolo solutions count show=True
+yolo solutions count source="path/to/video.mp4" # specify video file path
+Pose:
+yolo solutions workout show=True
+yolo solutions workout source="path/to/video.mp4" # specify video file path
+# Use keypoints for ab-workouts
+yolo solutions workout kpts="[5, 11, 13]" # left side
+yolo solutions workout kpts="[6, 12, 14]" # right side
+Queue:
+yolo solutions queue show=True
+yolo solutions queue source="path/to/video.mp4" # specify video file path
+yolo solutions queue region="[(20, 400), (1080, 400), (1080, 360), (20, 360)]" # configure queue coordinates
+Streamlit:
+yolo solutions inference
+yolo solutions inference model="path/to/model.pt" # use model fine-tuned with Ultralytics Python package
+etc:
+yolo help
+yolo checks
+yolo version
+yolo settings
+yolo copy-cfg
+yolo cfg
+yolo solutions help
+
+@Python Ultralytics
+from ultralytics import YOLO
+
+# Create a new YOLO model from scratch
+model = YOLO("yolo11n.yaml")
+
+# Load a pretrained YOLO model (recommended for training)
+model = YOLO("yolo11n.pt")
+
+# Train the model using the 'coco8.yaml' dataset for 3 epochs
+results = model.train(data="coco8.yaml", epochs=3)
+
+# Evaluate the model's performance on the validation set
+results = model.val()
+
+# Perform object detection on an image using the model
+results = model("https://ultralytics.com/images/bus.jpg")
+
+# Export the model to ONNX format
+success = model.export(format="onnx")
+
+@Ultralytics Settings
+이름	예제 값	데이터 유형	설명
+settings_version	'0.0.4'	str	Ultralytics 설정 버전 (Ultralytics pip 버전과는 다름)
+datasets_dir	'/path/to/datasets'	str	데이터 세트가 저장된 디렉토리
+weights_dir	'/path/to/weights'	str	모델 가중치가 저장되는 디렉토리
+runs_dir	'/path/to/runs'	str	실험 실행이 저장된 디렉토리
+uuid	'a1b2c3d4'	str	현재 설정에 대한 고유 식별자
+sync	True	bool	Ultralytics HUB에 분석 및 오류를 동기화하는 옵션
+api_key	''	str	Ultralytics HUB API 키
+clearml	True	bool	ClearML 로깅을 사용하는 옵션
+comet	True	bool	실험 추적 및 시각화를 위해 Comet ML을 사용하는 옵션
+dvc	True	bool	실험 추적을 위해 DVC 및 버전 제어를 사용하는 옵션
+hub	True	bool	Ultralytics HUB 통합을 사용하는 옵션
+mlflow	True	bool	실험 추적을 위해 MLFlow를 사용하는 옵션
+neptune	True	bool	실험 추적을 위해 Neptune을 사용하는 옵션
+raytune	True	bool	하이퍼파라미터 튜닝을 위해 Ray Tune을 사용하는 옵션
+tensorboard	True	bool	시각화를 위해 TensorBoard를 사용하는 옵션
+wandb	True	bool	Weights & Biases 로깅을 사용하는 옵션
+vscode_msg	True	bool	VS Code 터미널이 감지되면 Ultralytics-Snippets 확장 프로그램을 다운로드하라는 메시지를 표시합니다.
+
+//Python
+from ultralytics import settings
+
+# View all settings
+print(settings)
+
+# Return a specific setting
+value = settings["runs_dir"]
+=======================
+from ultralytics import settings
+
+# Update a setting
+settings.update({"runs_dir": "/path/to/runs"})
+
+# Update multiple settings
+settings.update({"runs_dir": "/path/to/runs", "tensorboard": False})
+
+# Reset settings to default values
+settings.reset()
+=======================
+//CLI
+yolo settings
+=======================
+# Update a setting
+yolo settings runs_dir='/path/to/runs'
+
+# Update multiple settings
+yolo settings runs_dir='/path/to/runs' tensorboard=False
+
+# Reset settings to default values
+yolo settings reset

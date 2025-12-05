@@ -1,0 +1,25 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/align-justify-svgrepo-com.svg</file>
+    <file>icons/browsers-svgrepo-com.svg</file>
+    <file>icons/chevron-left-svgrepo-com.svg</file>
+    <file>icons/chevron-right-svgrepo-com.svg</file>
+    <file>icons/circle-svgrepo-com.svg</file>
+    <file>icons/cloud-moon-svgrepo-com.svg</file>
+    <file>icons/disc-svgrepo-com.svg</file>
+    <file>icons/expand-svgrepo-com.svg</file>
+    <file>icons/info-circle-svgrepo-com.svg</file>
+    <file>icons/minus-svgrepo-com.svg</file>
+    <file>icons/patreon-logo-brandlogos.svg</file>
+    <file>icons/pay-pa.svg</file>
+    <file>icons/reshot-icon-drone.svg</file>
+    <file>icons/thumbs-up-svgrepo-com.svg</file>
+    <file>icons/user-svgrepo-com.svg</file>
+    <file>icons/x-circle-svgrepo-com.svg</file>
+    <file>icons/youtube-123.svg</file>
+  </qresource>
+  <qresource prefix="images">
+    <file>images/Black-and-yellow-stripes-1024x512.png</file>
+    <file>images/Black-and-yellow-stripes-1024x5121.png</file>
+  </qresource>
+</RCC>

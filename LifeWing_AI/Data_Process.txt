@@ -1,0 +1,89 @@
+@SAM2
+[x1, y1, x2, y2] conf label
+tensor([[  0.0000,   0.0000, 216.8750, 359.3750,   0.9948,   0.0000],
+        [218.1250,   0.0000, 419.3750, 359.3750,   0.9945,   1.0000],
+        [420.0000,   0.0000, 639.3750, 359.3750,   0.9923,   2.0000],
+        [278.7500,   0.0000, 639.3750, 360.0000,   0.9914,   3.0000],
+        [298.7500, 128.1250, 341.8750, 180.0000,   0.9728,   4.0000],
+        [275.0000, 145.0000, 302.5000, 176.2500,   0.9181,   5.0000]], device='cuda:0')
+
+        [298.7500, 128.1250, 341.8750, 180.0000,   0.9728,   4.0000],
+
+@
+https://docs.ultralytics.com/ko/yolov5/tutorials/train_custom_data/#train-on-custom-data
+
+https://miniwebtool.com/ko/%EB%B9%84%EB%94%94%EC%98%A4-%EC%9D%B4%EB%AF%B8%EC%A7%80-%EC%B6%94%EC%B6%9C%EA%B8%B0/
+Image Size: 640*480
+10m: A single pixel from a 640x480 image, taken from an altitude of 10 meters, covers an area of approximately 
+(0.000043 m^{2}) (20.8 cm x 15.6 cm)
+5m: A single pixel in a 640x480 image, viewed from 5 meters away, would cover an area of approximately 
+(1.57 {cm}^{2}) (0.000157 (m^{2})) 
+
+
+@dataset.yaml
+======================================
+# Dataset root directory relative to the yolov5 directory
+path: coco128
+
+# Train/val/test sets: specify directories, *.txt files, or lists
+train: images/train2017 # 128 images for training
+val: images/train2017 # 128 images for validation
+test: # Optional path to test images
+
+# Classes (example using 80 COCO classes)
+names:
+    0: person
+    1: bicycle
+    2: car
+    # ... (remaining COCO classes)
+    77: teddy bear
+    78: hair drier
+    79: toothbrush
+======================================
+
+@Annotation File
+image.txt
+File Format: *.txt
+Index start: 0 1 2 ...
+1 Line = 1 Bounding Box
+Line: class_index x_center y_center width height
+0 <= (x_center , y_center , width , height) <= 1
+Top Left = (0,0)
+Top Right = (1,0)
+Bottom Left = (0,1)
+Bottom Right = (1,1)
+ex1)zidane.txt
+0	0.48	0.63	0.69	0.71 
+0	0.74	0.52	0.31	0.93
+27	0.36	0.79	0.07	0.40
+
+@Directory Path
+/datasets/coco128/images/im0.jpg	# Path to the image file
+/datasets/coco128/labels/im0.txt	# Path to the corresponding label file
+
+@Directory Hierarchy
+/datasets/
+└── coco128/  # Dataset root
+    ├── images/
+    │   ├── train2017/  # Training images
+    │   │   ├── 000000000009.jpg
+    │   │   └── ...
+    │   └── val2017/    # Validation images (optional if using same set for train/val)
+    │       └── ...
+    └── labels/
+        ├── train2017/  # Training labels
+        │   ├── 000000000009.txt
+        │   └── ...
+        └── val2017/    # Validation labels (optional if using same set for train/val)
+            └── ...
+/yolov5/   # Same level as datasets
+
+@Model Choice
+Nano	Small	Medium	Large	XLarge
+-n	-s	-m	-l	-x
+
+@Train
+# Example: Train YOLOv5s on the COCO128 dataset for 3 epochs
+python train.py --img 640 --batch 16 --epochs 3 --data coco128.yaml --weights yolov5s.pt
+640*640 (640 same length)
+results in runs/train/

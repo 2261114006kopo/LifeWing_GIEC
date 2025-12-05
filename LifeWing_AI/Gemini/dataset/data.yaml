@@ -1,0 +1,9 @@
+path: dataset/lifewing
+train: images/train
+val: images/train
+test: 
+
+#class names
+names:
+  0: helmet
+  1: person
