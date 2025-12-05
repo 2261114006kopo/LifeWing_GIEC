@@ -31,7 +31,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="LifeWing_AI/LifeWing_Code/Sample_throwingDrone/images/lifewing_logo.png" alt="Logo" width="80" height="80">
+    <img src="LifeWing_AI/LifeWing_Code/Sample_throwingDrone/images/lifewing_logo.png" alt="Logo" width="400" height="400">
   </a>
 
   <h3 align="center">LifeWing</h3>
@@ -104,12 +104,16 @@ Use the `LifeWing` to save Lives.
 
 Python
 * <a href="https://www.python.org/">Python</a>
+
 PyTorch
 * <a href="https://pytorch.org/">PyTorch</a>
+
 Tensorflow
 * <a href="https://www.tensorflow.org/">Tensorflow</a>
+
 OpenCV
 * <a href="https://opencv.org/">OpenCV</a>
+
 Ultralytics YOLO
 * <a href="https://docs.ultralytics.com/">Ultralytics YOLO</a>
 
@@ -292,7 +296,7 @@ Use this space to list resources you find helpful and would like to give credit 
 [license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
+[product-screenshot]: LifeWing_AI/LifeWing_Code/Sample_throwingDrone/images/savior.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
